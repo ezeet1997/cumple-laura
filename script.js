@@ -306,5 +306,20 @@ window.addEventListener("pointerdown", iniciarMusica);
 window.addEventListener("touchend", iniciarMusica);
 window.addEventListener("click", iniciarMusica);
 
+const bgMusic = document.getElementById("bgMusic");
+const startOverlay = document.getElementById("startOverlay");
+const startExperience = document.getElementById("startExperience");
+
+startExperience.addEventListener("click", async () => {
+  try {
+    bgMusic.currentTime = 0;
+    bgMusic.volume = 0.8;
+    await bgMusic.play();
+    startOverlay.style.display = "none";
+  } catch (error) {
+    alert("El celular bloqueó el audio. Probá abrir la página en Chrome.");
+  }
+});
+
 confettiLoop();
 fireworksLoop();
