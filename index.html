@@ -3,74 +3,106 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Feliz Cumple Laura 💛</title>
+  <title>Feliz Cumple Laura</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <canvas id="confetti"></canvas>
+  <canvas id="confettiCanvas"></canvas>
+  <canvas id="fireworksCanvas"></canvas>
 
-  <section class="hero">
-    <div class="badge">03/06/2026 · Géminis ♊</div>
-    <h1>Feliz cumple, Laura 🎂</h1>
-    <p class="subtitle">
-      Hoy el sistema detectó algo importante: una persona muy especial está cumpliendo años.
-    </p>
-    <button onclick="scrollToGame()">Abrir sorpresa 🎁</button>
-  </section>
+  <div class="music-box">
+    <button id="musicBtn">🎵 Activar música</button>
+    <audio id="music" loop>
+      <source src="assets/cancion.mp3" type="audio/mpeg" />
+    </audio>
+    <small>Colocá tu canción en <b>assets/cancion.mp3</b></small>
+  </div>
 
-  <section class="message card">
-    <h2>Para vos, Laura</h2>
-    <p>
-      Que este nuevo año venga lleno de momentos lindos, alegría, amor, salud y muchas razones para sonreír.
-      Esta página fue hecha especialmente para vos, con cariño y un poquito de código.
-    </p>
-    <p class="terminal">
-      Ejecutando cumpleaños_laura.exe...<br>
-      ✔ Sonrisas cargadas<br>
-      ✔ Buena energía cargada<br>
-      ✔ Voucher desbloqueable pendiente...
-    </p>
-  </section>
-
-  <section class="gallery card">
-    <h2>Momentos especiales 📸</h2>
-    <p class="hint">Reemplazá estas imágenes por fotos de Laura en la carpeta <b>assets</b>.</p>
-    <div class="photos">
-      <img src="assets/foto1.jpg" onerror="this.src='assets/placeholder.svg'" alt="Foto 1">
-      <img src="assets/foto2.jpg" onerror="this.src='assets/placeholder.svg'" alt="Foto 2">
-      <img src="assets/foto3.jpg" onerror="this.src='assets/placeholder.svg'" alt="Foto 3">
-    </div>
-  </section>
-
-  <section id="game" class="game card">
-    <h2>Mini juego: atrapá los regalos 🎮</h2>
-    <p>
-      Mové la canasta con el mouse o con el dedo. Si atrapás <b>10 regalos</b>, desbloqueás el voucher.
-    </p>
-
-    <div class="scoreboard">
-      <span>Puntos: <b id="score">0</b>/10</span>
-      <span>Tiempo: <b id="time">30</b>s</span>
+  <header class="hero">
+    <div class="balloons">
+      <span>🎈</span><span>🎂</span><span>🎁</span><span>✨</span><span>♊</span>
     </div>
 
-    <div id="gameArea">
-      <div id="gift">🎁</div>
-      <div id="basket">🧺</div>
+    <div class="hero-card">
+      <p class="date">03/06/2026</p>
+      <h1>Feliz cumpleaños, Laura</h1>
+      <p class="age">24 años · Géminis ♊</p>
+      <p class="intro">
+        Esta página fue hecha especialmente para vos, con código, detalles y mucho cariño.
+      </p>
+      <button onclick="goToGame()">Jugar para ganar tu voucher 🍨</button>
     </div>
+  </header>
 
-    <button id="startBtn" onclick="startGame()">Empezar juego</button>
+  <main>
+    <section class="card letter">
+      <h2>💌 Carta para vos</h2>
+      <p>
+        Laura, hoy es tu cumpleaños y quería hacerte algo distinto. Algo que no sea solamente un mensaje,
+        sino un pequeño regalo hecho con tiempo, intención y cariño.
+      </p>
+      <p>
+        Ojalá este nuevo año de vida te encuentre sonriendo mucho, disfrutando de las cosas simples,
+        rodeada de buenas personas y cumpliendo todo eso que tenés en mente.
+      </p>
+      <p>
+        Que nunca te falten motivos para reír, momentos lindos para recordar y sueños nuevos para perseguir.
+        Que este día sea tan especial como vos.
+      </p>
+      <p class="signature">Hecho por Ezequiel con mucho cariño ❤️</p>
+    </section>
 
-    <div id="voucher" class="voucher hidden">
-      <h2>Voucher desbloqueado 🎉</h2>
-      <p>Laura ganó un voucher especial:</p>
-      <h3>Vale por una salida / cena / regalo sorpresa</h3>
-      <p class="small">Canjeable con Ezequiel. Sin fecha de vencimiento 💛</p>
-      <button onclick="window.print()">Imprimir voucher</button>
-    </div>
-  </section>
+    <section class="card gallery">
+      <h2>📸 Galería de Laura</h2>
+      <p>
+        Para usar fotos del TikTok, sacá capturas o descargá imágenes y guardalas como
+        <b>foto1.jpg</b>, <b>foto2.jpg</b>, <b>foto3.jpg</b> dentro de <b>assets/fotos/</b>.
+      </p>
+      <div class="photos">
+        <img src="assets/fotos/foto1.jpg" onerror="this.src='assets/placeholder.svg'" alt="Foto de Laura 1">
+        <img src="assets/fotos/foto2.jpg" onerror="this.src='assets/placeholder.svg'" alt="Foto de Laura 2">
+        <img src="assets/fotos/foto3.jpg" onerror="this.src='assets/placeholder.svg'" alt="Foto de Laura 3">
+        <img src="assets/fotos/foto4.jpg" onerror="this.src='assets/placeholder.svg'" alt="Foto de Laura 4">
+      </div>
+    </section>
+
+    <section id="game" class="card game-card">
+      <h2>🎮 Juego: atrapá los helados</h2>
+      <p>
+        Mové la canasta con el mouse o con el dedo. Tenés que atrapar <b>12 helados</b>
+        antes de que termine el tiempo.
+      </p>
+
+      <div class="game-info">
+        <span>Puntos: <b id="score">0</b>/12</span>
+        <span>Tiempo: <b id="time">35</b>s</span>
+      </div>
+
+      <div id="gameArea">
+        <div id="icecream">🍨</div>
+        <div id="basket">🧺</div>
+      </div>
+
+      <div class="actions">
+        <button id="startBtn" onclick="startGame()">Empezar juego</button>
+      </div>
+
+      <div id="voucher" class="voucher hidden">
+        <div class="voucher-inner">
+          <p class="voucher-top">Voucher especial</p>
+          <h2>Te ganaste un vale por</h2>
+          <h1>🍨 1 kilo de helado 🍨</h1>
+          <p>Para Laura</p>
+          <p class="voucher-firm">De parte de Ezequiel ❤️</p>
+          <p class="voucher-small">Canjeable cuando quieras. Válido por sonrisas ilimitadas.</p>
+          <button onclick="window.print()">Imprimir voucher</button>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    Hecho con código, cariño y un poquito de magia ✨
+    Hecho por Ezequiel con mucho cariño ❤️
   </footer>
 
   <script src="script.js"></script>
