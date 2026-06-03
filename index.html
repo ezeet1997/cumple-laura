@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feliz Cumple Laura 💛</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="confetti"></canvas>
+
+  <section class="hero">
+    <div class="badge">03/06/2026 · Géminis ♊</div>
+    <h1>Feliz cumple, Laura 🎂</h1>
+    <p class="subtitle">
+      Hoy el sistema detectó algo importante: una persona muy especial está cumpliendo años.
+    </p>
+    <button onclick="scrollToGame()">Abrir sorpresa 🎁</button>
+  </section>
+
+  <section class="message card">
+    <h2>Para vos, Laura</h2>
+    <p>
+      Que este nuevo año venga lleno de momentos lindos, alegría, amor, salud y muchas razones para sonreír.
+      Esta página fue hecha especialmente para vos, con cariño y un poquito de código.
+    </p>
+    <p class="terminal">
+      Ejecutando cumpleaños_laura.exe...<br>
+      ✔ Sonrisas cargadas<br>
+      ✔ Buena energía cargada<br>
+      ✔ Voucher desbloqueable pendiente...
+    </p>
+  </section>
+
+  <section class="gallery card">
+    <h2>Momentos especiales 📸</h2>
+    <p class="hint">Reemplazá estas imágenes por fotos de Laura en la carpeta <b>assets</b>.</p>
+    <div class="photos">
+      <img src="assets/foto1.jpg" onerror="this.src='assets/placeholder.svg'" alt="Foto 1">
+      <img src="assets/foto2.jpg" onerror="this.src='assets/placeholder.svg'" alt="Foto 2">
+      <img src="assets/foto3.jpg" onerror="this.src='assets/placeholder.svg'" alt="Foto 3">
+    </div>
+  </section>
+
+  <section id="game" class="game card">
+    <h2>Mini juego: atrapá los regalos 🎮</h2>
+    <p>
+      Mové la canasta con el mouse o con el dedo. Si atrapás <b>10 regalos</b>, desbloqueás el voucher.
+    </p>
+
+    <div class="scoreboard">
+      <span>Puntos: <b id="score">0</b>/10</span>
+      <span>Tiempo: <b id="time">30</b>s</span>
+    </div>
+
+    <div id="gameArea">
+      <div id="gift">🎁</div>
+      <div id="basket">🧺</div>
+    </div>
+
+    <button id="startBtn" onclick="startGame()">Empezar juego</button>
+
+    <div id="voucher" class="voucher hidden">
+      <h2>Voucher desbloqueado 🎉</h2>
+      <p>Laura ganó un voucher especial:</p>
+      <h3>Vale por una salida / cena / regalo sorpresa</h3>
+      <p class="small">Canjeable con Ezequiel. Sin fecha de vencimiento 💛</p>
+      <button onclick="window.print()">Imprimir voucher</button>
+    </div>
+  </section>
+
+  <footer>
+    Hecho con código, cariño y un poquito de magia ✨
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+INSTRUCCIONES
+
+1) Abrí index.html para probar la página.
+2) Reemplazá las fotos:
+   - assets/foto1.jpg
+   - assets/foto2.jpg
+   - assets/foto3.jpg
+
+3) Editá el voucher en index.html, buscando esta línea:
+   Vale por una salida / cena / regalo sorpresa
+
+4) Para subirlo:
+   - GitHub Pages
+   - Netlify
+   - o tu propio hosting
+
+Fecha configurada: 03/06/2026
+Persona: Laura
+Tema: cumpleaños + Géminis + juego con voucher
