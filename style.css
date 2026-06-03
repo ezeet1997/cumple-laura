@@ -358,3 +358,17 @@ footer {
     display: block !important;
   }
 }
+
+#startOverlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #ffb6e6, #cdb4ff);
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+}
+
+#startExperience {
+  font-size: 22px;
+  padding: 18px 28px;
+}
