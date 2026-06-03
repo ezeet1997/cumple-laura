@@ -1,0 +1,34 @@
+CUMPLE LAURA - ARCHIVOS COMPLETOS PARA GITHUB
+
+Contenido:
+- index.html
+- style.css
+- script.js
+- media.json
+- assets/media/ con fotos y videos
+- assets/cancion.mp3 opcional para música
+
+IMPORTANTE SOBRE LA MÚSICA:
+No incluí una canción comercial por derechos de autor.
+Para poner música:
+1) Conseguí un MP3 legalmente.
+2) Renombralo como: cancion.mp3
+3) Guardalo dentro de la carpeta: assets/
+4) Quedaría así: assets/cancion.mp3
+
+DATOS CONFIGURADOS:
+- Laura
+- Nació el 03/06/2002
+- Cumple 24 años el 03/06/2026
+- Firma: Ezequiel
+- Voucher: 1 kilo de helado
+- Carrusel automático de fotos y videos
+- Confeti y fuegos artificiales al entrar
+- Juego para desbloquear voucher
+
+SUBIR A GITHUB:
+1) Descomprimir este ZIP.
+2) Subir todo el contenido al repositorio.
+3) Activar GitHub Pages:
+   Settings > Pages > Deploy from branch > main > /root
+4) Esperar 1 a 5 minutos.
