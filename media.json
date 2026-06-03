@@ -1,15 +1,15 @@
 [
   {
     "type": "image",
-    "src": "assets/media/foto1.jpeg"
-  },
-  {
-    "type": "image",
     "src": "assets/media/foto2.jpeg"
   },
   {
     "type": "image",
     "src": "assets/media/foto3.jpeg"
+  },
+  {
+    "type": "image",
+    "src": "assets/media/foto1.jpeg"
   },
   {
     "type": "image",
