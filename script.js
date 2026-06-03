@@ -290,13 +290,21 @@ window.addEventListener("load", () => {
 const bgMusic = document.getElementById("bgMusic");
 
 function iniciarMusica() {
-  bgMusic.play().catch(() => {});
-  document.removeEventListener("click", iniciarMusica);
-  document.removeEventListener("touchstart", iniciarMusica);
+  bgMusic.muted = false;
+  bgMusic.volume = 0.8;
+
+  bgMusic.play().catch(err => {
+    console.log("Música bloqueada:", err);
+  });
+
+  window.removeEventListener("pointerdown", iniciarMusica);
+  window.removeEventListener("touchend", iniciarMusica);
+  window.removeEventListener("click", iniciarMusica);
 }
 
-document.addEventListener("click", iniciarMusica);
-document.addEventListener("touchstart", iniciarMusica);
+window.addEventListener("pointerdown", iniciarMusica);
+window.addEventListener("touchend", iniciarMusica);
+window.addEventListener("click", iniciarMusica);
 
 confettiLoop();
 fireworksLoop();
