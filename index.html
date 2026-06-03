@@ -1,22 +1,26 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'>
+
+<!DOCTYPE html><html><head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
 <title>Laura ❤️</title>
 <style>
-body{margin:0;font-family:Arial;background:linear-gradient(45deg,#ffb6e6,#cdb4ff,#a0e7e5);background-size:400% 400%;animation:bg 12s infinite;color:white;text-align:center}
+body{margin:0;font-family:Arial;background:linear-gradient(45deg,#ffb6e6,#cdb4ff,#a0e7e5);background-size:400% 400%;animation:bg 12s infinite;text-align:center;color:white}
 @keyframes bg{0%{background-position:0 50%}50%{background-position:100% 50%}100%{background-position:0 50%}}
-.hero{padding:60px 20px}
-.slider{max-width:900px;margin:auto;overflow:hidden}
-.slide{display:none}
-.slide.active{display:block}
+.hero{padding:50px}
+.card{background:rgba(0,0,0,.25);max-width:950px;margin:20px auto;padding:25px;border-radius:20px}
+.slide{display:none} .active{display:block}
 img,video{max-width:100%;max-height:70vh;border-radius:20px}
-.card{background:rgba(0,0,0,.25);margin:20px auto;padding:20px;border-radius:20px;max-width:900px}
 button{padding:12px 20px;border:none;border-radius:20px}
+#voucher{display:none;background:white;color:black;padding:20px;border-radius:20px}
 </style></head><body>
 <div class='hero'>
 <h1>🎂 Feliz Cumpleaños Laura 🎂</h1>
-<h3>♊ 03/06/2002 ♊</h3>
+<h2>♊ 03/06/2002 ♊</h2>
 <p>Hecho por Ezequiel con mucho cariño ❤️</p>
 </div>
-<div class='slider'><div class='slide'><img src='media/WhatsApp Image 2026-06-03 at 00.44.05.jpeg'></div>
+
+<div class='card'>
+<h2>📸 Tus recuerdos</h2>
+<div class='slide'><img src='media/WhatsApp Image 2026-06-03 at 00.44.05.jpeg'></div>
 <div class='slide'><img src='media/WhatsApp Image 2026-06-03 at 00.44.06.jpeg'></div>
 <div class='slide'><img src='media/SaveTik.co_7643538193794534657_1.jpeg'></div>
 <div class='slide'><img src='media/WhatsApp Image 2026-06-03 at 00.44.03.jpeg'></div>
@@ -28,20 +32,41 @@ button{padding:12px 20px;border:none;border-radius:20px}
 <div class='slide'><video controls src='media/WhatsApp Video 2026-06-03 at 00.44.05.mp4'></video></div>
 <div class='slide'><video controls src='media/SaveTik.co_7646210912289934593-hd.mp4'></video></div>
 <div class='slide'><video controls src='media/SaveTik.co_7568162110870506760-hd.mp4'></video></div>
+
+<br><button onclick='prev()'>⬅</button>
+<button onclick='next()'>➡</button>
 </div>
-<div><button onclick='prev()'>⬅</button> <button onclick='next()'>➡</button></div>
+
 <div class='card'>
 <h2>💌 Carta</h2>
-<p>Hoy quería regalarte algo diferente. Un pequeño rincón en internet creado especialmente para vos. Que tengas un cumpleaños increíble, lleno de sonrisas, sueños cumplidos y momentos inolvidables.</p>
+<p>Laura, hoy es un día especial. Quería regalarte algo distinto, hecho con tiempo, dedicación y mucho cariño. Espero que este nuevo año te traiga felicidad, sueños cumplidos y momentos inolvidables. Que nunca te falten motivos para sonreír.</p>
 </div>
+
 <div class='card'>
-<h2>🍨 Premio</h2>
-<h1>Vale por 1 kilo de helado</h1>
+<h2>🎮 Juego</h2>
+<p>Adiviná el número secreto entre 1 y 20</p>
+<input id='n' type='number'>
+<button onclick='play()'>Intentar</button>
+<p id='msg'></p>
+<div id='voucher'>
+<h1>🍨 GANASTE 🍨</h1>
+<h2>Vale por 1 kilo de helado</h2>
+<p>Para Laura ❤️</p>
 </div>
+</div>
+
 <script>
-let i=0,s=document.querySelectorAll('.slide');
-function show(n){s.forEach(x=>x.classList.remove('active'));s[n].classList.add('active');}
-function next(){i=(i+1)%s.length;show(i)}
-function prev(){i=(i-1+s.length)%s.length;show(i)}
-show(0);setInterval(next,4000);
+let slides=document.querySelectorAll('.slide'),i=0;
+function show(n){slides.forEach(s=>s.classList.remove('active')); if(slides.length) slides[n].classList.add('active');}
+function next(){i=(i+1)%slides.length;show(i)}
+function prev(){i=(i-1+slides.length)%slides.length;show(i)}
+if(slides.length){show(0);setInterval(next,4000);}
+
+let secret=Math.floor(Math.random()*20)+1;
+let tries=5;
+function play(){
+ let n=parseInt(document.getElementById('n').value);
+ if(n===secret){document.getElementById('voucher').style.display='block';document.getElementById('msg').innerHTML='🎉 Ganaste';}
+ else{tries--;document.getElementById('msg').innerHTML='Intentos restantes: '+tries;}
+}
 </script></body></html>
