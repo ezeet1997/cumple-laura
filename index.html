@@ -1,110 +1,47 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Feliz Cumple Laura</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <canvas id="confettiCanvas"></canvas>
-  <canvas id="fireworksCanvas"></canvas>
-
-  <div class="music-box">
-    <button id="musicBtn">🎵 Activar música</button>
-    <audio id="music" loop>
-      <source src="assets/cancion.mp3" type="audio/mpeg" />
-    </audio>
-    <small>Colocá tu canción en <b>assets/cancion.mp3</b></small>
-  </div>
-
-  <header class="hero">
-    <div class="balloons">
-      <span>🎈</span><span>🎂</span><span>🎁</span><span>✨</span><span>♊</span>
-    </div>
-
-    <div class="hero-card">
-      <p class="date">03/06/2026</p>
-      <h1>Feliz cumpleaños, Laura</h1>
-      <p class="age">24 años · Géminis ♊</p>
-      <p class="intro">
-        Esta página fue hecha especialmente para vos, con código, detalles y mucho cariño.
-      </p>
-      <button onclick="goToGame()">Jugar para ganar tu voucher 🍨</button>
-    </div>
-  </header>
-
-  <main>
-    <section class="card letter">
-      <h2>💌 Carta para vos</h2>
-      <p>
-        Laura, hoy es tu cumpleaños y quería hacerte algo distinto. Algo que no sea solamente un mensaje,
-        sino un pequeño regalo hecho con tiempo, intención y cariño.
-      </p>
-      <p>
-        Ojalá este nuevo año de vida te encuentre sonriendo mucho, disfrutando de las cosas simples,
-        rodeada de buenas personas y cumpliendo todo eso que tenés en mente.
-      </p>
-      <p>
-        Que nunca te falten motivos para reír, momentos lindos para recordar y sueños nuevos para perseguir.
-        Que este día sea tan especial como vos.
-      </p>
-      <p class="signature">Hecho por Ezequiel con mucho cariño ❤️</p>
-    </section>
-
-    <section class="card gallery">
-      <h2>📸 Galería de Laura</h2>
-      <p>
-        Para usar fotos del TikTok, sacá capturas o descargá imágenes y guardalas como
-        <b>foto1.jpg</b>, <b>foto2.jpg</b>, <b>foto3.jpg</b> dentro de <b>assets/fotos/</b>.
-      </p>
-      <div class="photos">
-        <img src="assets/fotos/foto1.jpg" onerror="this.src='assets/placeholder.svg'" alt="Foto de Laura 1">
-        <img src="assets/fotos/foto2.jpg" onerror="this.src='assets/placeholder.svg'" alt="Foto de Laura 2">
-        <img src="assets/fotos/foto3.jpg" onerror="this.src='assets/placeholder.svg'" alt="Foto de Laura 3">
-        <img src="assets/fotos/foto4.jpg" onerror="this.src='assets/placeholder.svg'" alt="Foto de Laura 4">
-      </div>
-    </section>
-
-    <section id="game" class="card game-card">
-      <h2>🎮 Juego: atrapá los helados</h2>
-      <p>
-        Mové la canasta con el mouse o con el dedo. Tenés que atrapar <b>12 helados</b>
-        antes de que termine el tiempo.
-      </p>
-
-      <div class="game-info">
-        <span>Puntos: <b id="score">0</b>/12</span>
-        <span>Tiempo: <b id="time">35</b>s</span>
-      </div>
-
-      <div id="gameArea">
-        <div id="icecream">🍨</div>
-        <div id="basket">🧺</div>
-      </div>
-
-      <div class="actions">
-        <button id="startBtn" onclick="startGame()">Empezar juego</button>
-      </div>
-
-      <div id="voucher" class="voucher hidden">
-        <div class="voucher-inner">
-          <p class="voucher-top">Voucher especial</p>
-          <h2>Te ganaste un vale por</h2>
-          <h1>🍨 1 kilo de helado 🍨</h1>
-          <p>Para Laura</p>
-          <p class="voucher-firm">De parte de Ezequiel ❤️</p>
-          <p class="voucher-small">Canjeable cuando quieras. Válido por sonrisas ilimitadas.</p>
-          <button onclick="window.print()">Imprimir voucher</button>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    Hecho por Ezequiel con mucho cariño ❤️
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
+<!DOCTYPE html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>Laura ❤️</title>
+<style>
+body{margin:0;font-family:Arial;background:linear-gradient(45deg,#ffb6e6,#cdb4ff,#a0e7e5);background-size:400% 400%;animation:bg 12s infinite;color:white;text-align:center}
+@keyframes bg{0%{background-position:0 50%}50%{background-position:100% 50%}100%{background-position:0 50%}}
+.hero{padding:60px 20px}
+.slider{max-width:900px;margin:auto;overflow:hidden}
+.slide{display:none}
+.slide.active{display:block}
+img,video{max-width:100%;max-height:70vh;border-radius:20px}
+.card{background:rgba(0,0,0,.25);margin:20px auto;padding:20px;border-radius:20px;max-width:900px}
+button{padding:12px 20px;border:none;border-radius:20px}
+</style></head><body>
+<div class='hero'>
+<h1>🎂 Feliz Cumpleaños Laura 🎂</h1>
+<h3>♊ 03/06/2002 ♊</h3>
+<p>Hecho por Ezequiel con mucho cariño ❤️</p>
+</div>
+<div class='slider'><div class='slide'><img src='media/WhatsApp Image 2026-06-03 at 00.44.05.jpeg'></div>
+<div class='slide'><img src='media/WhatsApp Image 2026-06-03 at 00.44.06.jpeg'></div>
+<div class='slide'><img src='media/SaveTik.co_7643538193794534657_1.jpeg'></div>
+<div class='slide'><img src='media/WhatsApp Image 2026-06-03 at 00.44.03.jpeg'></div>
+<div class='slide'><img src='media/WhatsApp Image 2026-06-03 at 00.44.04 (1).jpeg'></div>
+<div class='slide'><img src='media/WhatsApp Image 2026-06-03 at 00.44.04.jpeg'></div>
+<div class='slide'><video controls src='media/Download.mp4'></video></div>
+<div class='slide'><video controls src='media/WhatsApp Video 2026-06-03 at 00.44.04 (1).mp4'></video></div>
+<div class='slide'><video controls src='media/WhatsApp Video 2026-06-03 at 00.44.04.mp4'></video></div>
+<div class='slide'><video controls src='media/WhatsApp Video 2026-06-03 at 00.44.05.mp4'></video></div>
+<div class='slide'><video controls src='media/SaveTik.co_7646210912289934593-hd.mp4'></video></div>
+<div class='slide'><video controls src='media/SaveTik.co_7568162110870506760-hd.mp4'></video></div>
+</div>
+<div><button onclick='prev()'>⬅</button> <button onclick='next()'>➡</button></div>
+<div class='card'>
+<h2>💌 Carta</h2>
+<p>Hoy quería regalarte algo diferente. Un pequeño rincón en internet creado especialmente para vos. Que tengas un cumpleaños increíble, lleno de sonrisas, sueños cumplidos y momentos inolvidables.</p>
+</div>
+<div class='card'>
+<h2>🍨 Premio</h2>
+<h1>Vale por 1 kilo de helado</h1>
+</div>
+<script>
+let i=0,s=document.querySelectorAll('.slide');
+function show(n){s.forEach(x=>x.classList.remove('active'));s[n].classList.add('active');}
+function next(){i=(i+1)%s.length;show(i)}
+function prev(){i=(i-1+s.length)%s.length;show(i)}
+show(0);setInterval(next,4000);
+</script></body></html>
