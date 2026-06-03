@@ -3,18 +3,6 @@ function scrollToSection(id) {
   document.getElementById(id).scrollIntoView({ behavior: "smooth" });
 }
 
-// Música
-const music = document.getElementById("bgMusic");
-const musicBtn = document.getElementById("musicBtn");
-
-musicBtn.addEventListener("click", async () => {
-  try {
-    await music.play();
-    musicBtn.textContent = "🎵 Música activada";
-  } catch (e) {
-    alert("Para que suene música, agregá un archivo MP3 llamado cancion.mp3 dentro de assets/");
-  }
-});
 
 // Carrusel
 let mediaItems = [];
