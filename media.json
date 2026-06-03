@@ -1,14 +1,6 @@
 [
   {
     "type": "image",
-    "src": "assets/media/foto4.jpeg"
-  },
-  {
-    "type": "image",
-    "src": "assets/media/foto5.jpeg"
-  },
-  {
-    "type": "image",
     "src": "assets/media/foto1.jpeg"
   },
   {
@@ -17,19 +9,23 @@
   },
   {
     "type": "image",
-    "src": "assets/media/foto6.jpeg"
-  },
-  {
-    "type": "image",
     "src": "assets/media/foto3.jpeg"
   },
   {
-    "type": "video",
-    "src": "assets/media/video4.mp4"
+    "type": "image",
+    "src": "assets/media/foto4.jpeg"
+  },
+  {
+    "type": "image",
+    "src": "assets/media/foto5.jpeg"
+  },
+  {
+    "type": "image",
+    "src": "assets/media/foto6.jpeg"
   },
   {
     "type": "video",
-    "src": "assets/media/video3.mp4"
+    "src": "assets/media/video1.mp4"
   },
   {
     "type": "video",
@@ -37,7 +33,11 @@
   },
   {
     "type": "video",
-    "src": "assets/media/video1.mp4"
+    "src": "assets/media/video3.mp4"
+  },
+  {
+    "type": "video",
+    "src": "assets/media/video4.mp4"
   },
   {
     "type": "video",

@@ -7,119 +7,41 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
   <div id="startOverlay">
-  <button id="startExperience">🎂 Tocar para comenzar</button>
-</div>
-
-<audio id="bgMusic" loop preload="auto" playsinline>
-  <source src="assets/cancion.mp3" type="audio/mpeg">
-</audio>
-  <canvas id="confettiCanvas"></canvas>
-  <canvas id="fireworksCanvas"></canvas>
-  
-<audio id="bgMusic" loop preload="auto" playsinline>
-  <source src="assets/cancion.mp3" type="audio/mpeg">
-</audio>
-
-  
-
+    <div class="start-card">
+      <div class="start-icons">🎂 ✨ ♊ 🎈</div>
+      <h1>Laura</h1>
+      <p>Hay una sorpresa especial para vos.</p>
+      <button id="startExperience">Tocar para comenzar 💖</button>
+      <small>Al tocar, se activa la música y empieza la experiencia.</small>
+    </div>
+  </div>
+  <audio id="bgMusic" loop preload="auto" playsinline><source src="assets/cancion.mp3" type="audio/mpeg"></audio>
+  <canvas id="confettiCanvas"></canvas><canvas id="fireworksCanvas"></canvas>
   <header class="hero">
-    <div class="floating floating-1">🎈</div>
-    <div class="floating floating-2">🎂</div>
-    <div class="floating floating-3">🎁</div>
-    <div class="floating floating-4">♊</div>
-    <div class="floating floating-5">✨</div>
-
+    <div class="glow glow-1"></div><div class="glow glow-2"></div>
+    <div class="floating floating-1">🎈</div><div class="floating floating-2">🎂</div><div class="floating floating-3">🎁</div><div class="floating floating-4">♊</div><div class="floating floating-5">✨</div><div class="floating floating-6">🍨</div>
     <div class="hero-card">
       <p class="eyebrow">03/06/2026 · Géminis ♊</p>
       <h1>Feliz cumpleaños, Laura</h1>
       <p class="sub">24 años · una página hecha especialmente para vos</p>
       <p class="made">Hecho por Ezequiel con mucho cariño ❤️</p>
-      <div class="hero-actions">
-        <button onclick="scrollToSection('carta')">Leer carta 💌</button>
-        <button onclick="scrollToSection('juego')">Jugar por el voucher 🍨</button>
-      </div>
+      <div class="hero-actions"><button onclick="scrollToSection('carta')">Leer carta 💌</button><button onclick="scrollToSection('recuerdos')">Ver recuerdos 📸</button><button onclick="scrollToSection('juego')">Jugar por el voucher 🍨</button></div>
     </div>
   </header>
-
   <main>
     <section id="carta" class="section-card letter-card">
-      <h2>💌 Carta para Laura</h2>
-      <p>
-        Laura, hoy es tu cumpleaños y quería regalarte algo distinto. No solamente un mensaje,
-        sino una página hecha con tiempo, detalles y mucho cariño ❤️.
-      </p>
-      <p>
-        Espero que este nuevo año de vida te traiga momentos hermosos, sonrisas sinceras,
-        sueños cumplidos y muchas razones para sentirte feliz. Que cada día tengas algo lindo
-        para recordar y algo nuevo por lo que ilusionarte.
-      </p>
-      <p>
-        Ojalá esta pequeña sorpresa te saque una sonrisa y te recuerde que hoy es tu día,
-        y que merecés disfrutarlo muchísimo.
-      </p>
+      <span class="section-pill">Carta especial</span><h2>💌 Para Laura</h2>
+      <p>Laura, hoy es tu cumpleaños y quería regalarte algo distinto. No solamente un mensaje, sino una página hecha con tiempo, detalles y mucho cariño.</p>
+      <p>Espero que este nuevo año de vida te traiga momentos hermosos, sonrisas sinceras, sueños cumplidos y muchas razones para sentirte feliz. Que cada día tengas algo lindo para recordar y algo nuevo por lo que ilusionarte.</p>
+      <p>Ojalá esta pequeña sorpresa te saque una sonrisa y te recuerde que hoy es tu día, y que merecés disfrutarlo muchísimo.</p>
       <p class="signature">Ezequiel ❤️</p>
     </section>
-
-    <section class="section-card carousel-card">
-      <div class="section-title">
-        <h2>📸 Carrusel de fotos</h2>
-        <p>Fotos y videos de la cumpleañera ❤️.</p>
-      </div>
-
-      <div class="carousel">
-        <button class="nav prev" onclick="prevSlide()">‹</button>
-        <div id="slidesContainer" class="slides-container"></div>
-        <button class="nav next" onclick="nextSlide()">›</button>
-      </div>
-
-      <div class="carousel-controls">
-        <button onclick="toggleAutoplay()" id="autoplayBtn">⏸ Pausar carrusel</button>
-        <button onclick="nextSlide()">Siguiente ➜</button>
-      </div>
-      <div id="dots" class="dots"></div>
-    </section>
-
-    <section id="juego" class="section-card game-card">
-      <h2>🎮 Juego: atrapá los helados</h2>
-      <p>
-        Mové la canasta con el tactil. Si atrapás <b>12 helados</b> antes de que termine el tiempo,
-        desbloqueás el voucher.
-      </p>
-
-      <div class="score-row">
-        <span>Puntos: <b id="score">0</b>/12</span>
-        <span>Tiempo: <b id="time">35</b>s</span>
-      </div>
-
-      <div id="gameArea">
-        <div id="icecream">🍨</div>
-        <div id="basket">🧺</div>
-      </div>
-
-      <div class="game-actions">
-        <button id="startGameBtn" onclick="startGame()">Empezar juego</button>
-      </div>
-
-      <div id="voucher" class="voucher hidden">
-        <div class="voucher-inner">
-          <p class="voucher-label">Voucher especial</p>
-          <h2>Te ganaste un vale por</h2>
-          <h1>🍨 1 kilo de helado 🍨</h1>
-          <p class="to">Para Laura</p>
-          <p class="from">De parte de Ezequiel ❤️</p>
-          <p class="note">Canjeable cuando quieras. Válido por sonrisas ilimitadas.</p>
-          <button onclick="window.print()">Imprimir voucher</button>
-        </div>
-      </div>
-    </section>
+    <section class="section-card mini-details"><div class="detail"><b>♊ Signo</b><span>Géminis</span></div><div class="detail"><b>🎂 Cumple</b><span>03/06/2002</span></div><div class="detail"><b>🎁 Sorpresa</b><span>Voucher desbloqueable</span></div></section>
+    <section id="recuerdos" class="section-card carousel-card"><div class="section-title"><span class="section-pill">Galería</span><h2>📸 Carrusel de fotos y videos</h2><p>Un recorrido con recuerdos de la cumpleañera.</p></div><div class="carousel"><button class="nav prev" onclick="prevSlide()">‹</button><div id="slidesContainer" class="slides-container"></div><button class="nav next" onclick="nextSlide()">›</button></div><div class="carousel-controls"><button onclick="toggleAutoplay()" id="autoplayBtn">⏸ Pausar carrusel</button><button onclick="nextSlide()">Siguiente ➜</button></div><div id="dots" class="dots"></div></section>
+    <section id="juego" class="section-card game-card"><span class="section-pill">Juego sorpresa</span><h2>🎮 Atrapá los helados</h2><p>Mové la canasta con el dedo o el mouse. Si atrapás <b>12 helados</b> antes de que termine el tiempo, desbloqueás el voucher.</p><div class="score-row"><span>Puntos: <b id="score">0</b>/12</span><span>Tiempo: <b id="time">35</b>s</span></div><div id="gameArea"><div class="game-bg-text">🍨 🍦 🎂 🎁</div><div id="icecream">🍨</div><div id="basket">🧺</div></div><div class="game-actions"><button id="startGameBtn" onclick="startGame()">Empezar juego</button></div><div id="voucher" class="voucher hidden"><div class="voucher-inner"><p class="voucher-label">Voucher especial</p><h2>Te ganaste un vale por</h2><h1>🍨 1 kilo de helado 🍨</h1><p class="to">Para Laura</p><p class="from">De parte de Ezequiel ❤️</p><p class="note">Canjeable cuando quieras. Válido por sonrisas ilimitadas.</p><button onclick="window.print()">Imprimir voucher</button></div></div></section>
   </main>
-
-  <footer>
-    Hecho por Ezequiel con mucho cariño ❤️
-  </footer>
-
+  <footer>Hecho por Ezequiel con mucho cariño ❤️</footer>
   <script src="script.js"></script>
 </body>
 </html>
