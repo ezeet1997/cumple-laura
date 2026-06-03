@@ -287,5 +287,16 @@ window.addEventListener("load", () => {
   }
 });
 
+const bgMusic = document.getElementById("bgMusic");
+
+function iniciarMusica() {
+  bgMusic.play().catch(() => {});
+  document.removeEventListener("click", iniciarMusica);
+  document.removeEventListener("touchstart", iniciarMusica);
+}
+
+document.addEventListener("click", iniciarMusica);
+document.addEventListener("touchstart", iniciarMusica);
+
 confettiLoop();
 fireworksLoop();
